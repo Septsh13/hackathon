@@ -14,17 +14,65 @@
 
 <body>
 
+    <div class="institution-header">
+        <div class="inst-title">SRM Institute of Science and Technology, Ramapuram</div>
+        <div class="inst-subtitle">Faculty of Engineering | Chennai Ramapuram Campus</div>
+    </div>
+
+    <img src="OIP.jpg" alt="Techpro Logo" class="club-logo-top">
+
     <!-- Hero Section -->
-    <img src="OIP.jpg" alt="Techpro Logo" class="logo-top-right">
-    <img src="OIP.jpg" alt="" class="logo-watermark">
     <header id="hero" class="hero-section">
         <div class="hero-bg"></div>
+        <div class="poster-stripes">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+        </div>
+
         <div class="hero-content">
-            <div class="club-logo bounce-in">
-                <i class="fa-solid fa-atom fa-5x"></i> <!-- Placeholder Logo -->
+            <p class="hero-subtitle">TECHPRO CLUB PRESENTS</p>
+            <h1 class="glow-text slide-up">AXIORA'26</h1>
+            <div class="poster-icons">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-scale-balanced fa-2x"></i>
+                </div>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-tv fa-2x"></i>
+                </div>
+                <div class="icon-circle large">
+                    <i class="fa-solid fa-lightbulb fa-3x"></i>
+                </div>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-person-walking-with-cane fa-2x"></i>
+                </div>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-cart-shopping fa-2x"></i>
+                </div>
             </div>
-            <h1 class="glow-text slide-up">IDEATHON 2026</h1>
-            <p class="tagline slide-up delay-1">Innovate. <span class="highlight">Build.</span> Transform.</p>
+
+            <p class="hero-tagline slide-up delay-1">"Your Idea Can Change The Future"</p>
+
+            <div class="event-highlights">
+                <div class="highlight-item">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>23rd Feb 2026</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>9:00 AM Onwards</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>BMS, 9th Floor</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>FREE Entry</span>
+                </div>
+            </div>
+
             <a href="#registration" class="cta-button slide-up delay-2">Register Now <i
                     class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -110,14 +158,14 @@
 
                 <!-- Team Composition -->
                 <div class="form-group">
-                    <label>Team Size (Including Lead) *</label>
+                    <label>Team Size *</label>
                     <div class="input-wrapper">
-                        <i class="fa-solid fa-people-group input-icon"></i>
-                        <select id="teamSizeSelect" name="entry.841630259" required>
-                            <option value="" disabled selected>Select Size</option>
+                        <i class="fa-solid fa-users input-icon"></i>
+                        <select id="teamSizeSelect" name="entry.1565457388" required="">
+                            <option value="" disabled="" selected="">Select Team Size</option>
+                            <option value="1">Solo Individual</option>
                             <option value="2">2 Members</option>
                             <option value="3">3 Members</option>
-                            <option value="4">4 Members</option>
                         </select>
                     </div>
                 </div>
@@ -139,67 +187,85 @@
                             <input type="text" name="entry.160663986" placeholder="Full Name" id="member2input">
                         </div>
                     </div>
-                    <div class="form-group member-input hidden" id="member3row">
-                        <label>Team Member 3 Name</label>
+                    <div class="form-group member-row hidden" id="member3row">
+                        <label>Member 3 Name & Reg No</label>
                         <div class="input-wrapper">
-                            <i class="fa-solid fa-user input-icon"></i>
-                            <input type="text" name="entry.684415208" placeholder="Full Name" id="member3input">
+                            <i class="fa-solid fa-user-plus input-icon"></i>
+                            <input type="text" id="member3input" name="entry.2064132845" placeholder="Name - Reg No">
                         </div>
                     </div>
                 </div>
 
-                <!-- Hidden Confirmations needed for form -->
-                <!-- Payment Section -->
-                <div class="form-group payment-section">
-                    <h3 class="form-title" style="font-size: 1.8rem; margin-top: 1rem;">Registration Fee</h3>
-                    <div class="qr-container" style="text-align: center; margin-bottom: 2rem;">
-                        <img src="upi qr.jpeg" alt="UPI QR Code"
-                            style="width: 200px; border-radius: 10px; border: 2px solid var(--primary-color); box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);">
-                        <p style="margin-top: 1rem; color: var(--text-color); font-size: 1.2rem;">Amount: <span
-                                class="highlight">₹300</span></p>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Scan the QR code to pay.</p>
+                <!-- WhatsApp Section -->
+                <div class="whatsapp-join"
+                    style="margin-top: 2rem; padding: 1.5rem; background: rgba(139, 29, 29, 0.1); border: 1px solid rgba(139, 29, 29, 0.3); border-radius: 15px; text-align: center;">
+                    <i class="fa-brands fa-whatsapp"
+                        style="font-size: 2.5rem; color: #25D366; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: #fff;">Join Official WhatsApp Group</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Stay updated with
+                        important announcements and event details.</p>
+                    <a href="https://chat.whatsapp.com/HhIFV0CZ0xM0yQh7SjkTKD?mode=gi_t" target="_blank"
+                        class="whatsapp-btn"
+                        style="display: inline-block; padding: 0.8rem 1.5rem; background: #25D366; color: #fff; text-decoration: none; border-radius: 30px; font-weight: 600; margin-bottom: 1rem; transition: all 0.3s ease;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Click to Join
+                    </a>
+                    <div class="checkbox-wrapper"
+                        style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <input type="checkbox" id="whatsappConfirmed" required
+                            style="width: 18px; height: 18px; cursor: pointer;">
+                        <label for="whatsappConfirmed" style="font-size: 0.9rem; cursor: pointer;">I have joined the
+                            WhatsApp group</label>
                     </div>
-
-                    <div class="form-group">
-                        <label>UPI Transaction ID (12 Digits) *</label>
-                        <div class="input-wrapper">
-                            <i class="fa-solid fa-receipt input-icon"></i>
-                            <input type="text" name="entry.1579328407" placeholder="Enter 12-digit Transaction ID"
-                                required pattern="\d{12}" title="Please enter exactly 12 digits">
-                        </div>
-                    </div>
-
-                    <!-- WhatsApp Section -->
-                    <div class="whatsapp-join"
-                        style="margin-top: 2rem; padding: 1.5rem; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 15px; text-align: center;">
-                        <i class="fa-brands fa-whatsapp"
-                            style="font-size: 2.5rem; color: #25D366; margin-bottom: 1rem;"></i>
-                        <h4 style="margin-bottom: 0.5rem; color: #fff;">Join Official WhatsApp Group</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Stay updated with
-                            important announcements and event details.</p>
-                        <a href="https://chat.whatsapp.com/HhIFV0CZ0xM0yQh7SjkTKD?mode=gi_t" target="_blank"
-                            class="whatsapp-btn"
-                            style="display: inline-block; padding: 0.8rem 1.5rem; background: #25D366; color: #fff; text-decoration: none; border-radius: 30px; font-weight: 600; margin-bottom: 1rem; transition: all 0.3s ease;">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Click to Join
-                        </a>
-                        <div class="checkbox-wrapper"
-                            style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                            <input type="checkbox" id="whatsappConfirmed" required
-                                style="width: 18px; height: 18px; cursor: pointer;">
-                            <label for="whatsappConfirmed" style="font-size: 0.9rem; cursor: pointer;">I have joined the
-                                WhatsApp group</label>
-                        </div>
-                        <input type="hidden" name="entry.810219618" id="whatsappEntry" value="Not Joined">
-                    </div>
+                    <input type="hidden" name="entry.810219618" id="whatsappEntry" value="Not Joined">
                 </div>
 
-                <!-- Hidden Confirmations needed for form -->
                 <input type="hidden" name="entry.1858168554" value="I confirm">
 
-                <button type="submit" class="submit-btn">
-                    <span>Register Team <i class="fa-solid fa-rocket"></i></span>
+                <button type="submit" class="submit-btn" style="margin-top: 2rem;">
+                    <span>Complete Registration <i class="fa-solid fa-rocket"></i></span>
                 </button>
             </form>
+        </div>
+    </section>
+
+    <!-- Coordinators Section -->
+    <section id="contact" class="coordinators-section">
+        <div class="coordinators-grid">
+            <!-- Faculty -->
+            <div class="coord-group slide-up">
+                <h2 class="section-title">Faculty Coordinators</h2>
+                <div class="coord-card">
+                    <div class="coord-info">
+                        <h4>Ms. S. Lakshmi</h4>
+                        <p>AP / CS & GT</p>
+                    </div>
+                </div>
+                <div class="coord-card">
+                    <div class="coord-info">
+                        <h4>Ms. M. Chithra</h4>
+                        <p>AP / CS & GT</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Students -->
+            <div class="coord-group slide-up delay-1">
+                <h2 class="section-title">Student Coordinators</h2>
+                <div class="coord-card">
+                    <div class="coord-info">
+                        <h4>Sai Shruthi</h4>
+                        <p>Event Lead</p>
+                    </div>
+                    <a href="tel:9042043337" class="coord-contact"><i class="fa-solid fa-phone"></i> 9042043337</a>
+                </div>
+                <div class="coord-card">
+                    <div class="coord-info">
+                        <h4>Sanjai S</h4>
+                        <p>Event Lead</p>
+                    </div>
+                    <a href="tel:9841254471" class="coord-contact"><i class="fa-solid fa-phone"></i> 98412 54471</a>
+                </div>
+            </div>
         </div>
     </section>
 

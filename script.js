@@ -5,21 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const teamSizeSelect = document.getElementById('teamSizeSelect');
     const memberFields = {
         1: document.getElementById('member1row'),
-        2: document.getElementById('member2row'),
-        3: document.getElementById('member3row')
+        2: document.getElementById('member2row')
     };
     const memberInputs = {
         1: document.getElementById('member1input'),
-        2: document.getElementById('member2input'),
-        3: document.getElementById('member3input')
+        2: document.getElementById('member2input')
     };
 
     function updateTeamFields() {
-        const size = parseInt(teamSizeSelect.value) || 0;
+        const size = parseInt(teamSizeSelect.value) || 1;
         
+        // Reset all
         Object.values(memberFields).forEach(el => el.classList.add('hidden'));
         Object.values(memberInputs).forEach(input => input.removeAttribute('required'));
 
+        // Show based on size (Lead is always there, member 1 is for 2+, member 2 is for 3)
         if (size >= 2) {
             memberFields[1].classList.remove('hidden');
             memberInputs[1].setAttribute('required', 'true');
@@ -28,64 +28,62 @@ document.addEventListener('DOMContentLoaded', () => {
             memberFields[2].classList.remove('hidden');
             memberInputs[2].setAttribute('required', 'true');
         }
-        if (size >= 4) {
-            memberFields[3].classList.remove('hidden');
-            memberInputs[3].setAttribute('required', 'true');
-        }
     }
 
-    teamSizeSelect.addEventListener('change', updateTeamFields);
-
-    // Form Submission Logic
-    const form = document.getElementById('ideathonForm');
-    
-    // Additional Validation for Transaction ID
-    // Although 'pattern' attribute handles it, we can add a visual check or ensure it's robust
-    const txnInput = form.querySelector('input[name="entry.1579328407"]');
-    txnInput.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/\D/g, '').slice(0, 12); // Only digits, max 12
-    });
+    if (teamSizeSelect) {
+        teamSizeSelect.addEventListener('change', updateTeamFields);
+    }
 
     // WhatsApp Confirmation Logic
     const waCheckbox = document.getElementById('whatsappConfirmed');
     const waEntry = document.getElementById('whatsappEntry');
     
-    waCheckbox.addEventListener('change', (e) => {
-        waEntry.value = e.target.checked ? "Joined" : "Not Joined";
-    });
+    if (waCheckbox && waEntry) {
+        waCheckbox.addEventListener('change', (e) => {
+            waEntry.value = e.target.checked ? "Joined" : "Not Joined";
+        });
+    }
 
-    form.addEventListener('submit', () => {
-        submitted = true;
-        const btn = form.querySelector('button');
-        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
-        btn.disabled = true;
+    // Form Submission Logic
+    const form = document.getElementById('ideathonForm');
+    
+    if (form) {
+        form.addEventListener('submit', () => {
+            submitted = true;
+            const btn = form.querySelector('button');
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Registering...';
+            btn.disabled = true;
 
-        // Fallback: If iframe onload doesn't fire in 5 seconds, redirect anyway
-        setTimeout(() => {
-            if (submitted) {
-                window.location.href = 'thankyou.html';
-            }
-        }, 5000);
-    });
+            // Fallback redirect
+            setTimeout(() => {
+                if (submitted) {
+                    window.location.href = 'thankyou.html';
+                }
+            }, 5000);
+        });
+    }
 
     // Iframe Load Handler (Success)
     const iframe = document.getElementById('hidden_iframe');
-    iframe.onload = () => {
-        if (submitted) {
-            document.getElementById('successPopup').classList.add('show');
-            setTimeout(() => {
-                window.location.href = 'thankyou.html';
-            }, 1500);
-        }
-    };
+    if (iframe) {
+        iframe.onload = () => {
+            if (submitted) {
+                document.getElementById('successPopup').classList.add('show');
+                setTimeout(() => {
+                    window.location.href = 'thankyou.html';
+                }, 1500);
+            }
+        };
+    }
 
     // Scroll Logic
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 

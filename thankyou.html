@@ -13,7 +13,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #050510;
+            background-color: #0F0202;
             color: #fff;
             font-family: 'Outfit', sans-serif;
             height: 100vh;
@@ -32,10 +32,10 @@
 
         .icon {
             font-size: 5rem;
-            color: #00f3ff;
+            color: #FF3D3D;
             margin-bottom: 2rem;
             animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px rgba(0, 243, 255, 0.5));
+            filter: drop-shadow(0 0 20px rgba(255, 61, 61, 0.5));
         }
 
         @keyframes float {
@@ -53,11 +53,11 @@
         h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
-            background: linear-gradient(90deg, #00f3ff, #bc13fe);
+            background: linear-gradient(90deg, #FF3D3D, #8B1D1D);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(188, 19, 254, 0.3);
+            text-shadow: 0 0 30px rgba(255, 61, 61, 0.3);
         }
 
         p {
@@ -130,7 +130,7 @@
                 this.size = Math.random() * 2 + 1;
                 this.speedX = Math.random() * 1 - 0.5;
                 this.speedY = Math.random() * 1 - 0.5;
-                this.color = Math.random() > 0.5 ? '#00f3ff' : '#bc13fe';
+                this.color = Math.random() > 0.5 ? '#FF3D3D' : '#8B1D1D';
             }
             update() {
                 this.x += this.speedX;
