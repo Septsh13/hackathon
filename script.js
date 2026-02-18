@@ -2,7 +2,6 @@ let submitted = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Team Size Dynamic Fields
-    const teamSizeSelect = document.getElementById('teamSizeSelect');
     const memberFields = {
         1: document.getElementById('member1row'),
         2: document.getElementById('member2row')
@@ -15,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateTeamFields() {
         const val = teamSizeSelect.value;
         let size = 1;
-        if (val.includes('2')) size = 2;
-        if (val.includes('3')) size = 3;
+        if (val === '2') size = 2;
+        if (val === '3') size = 3;
         
         // Reset all
         Object.values(memberFields).forEach(el => el.classList.add('hidden'));
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (waCheckbox && waEntry) {
         waCheckbox.addEventListener('change', (e) => {
-            waEntry.value = e.target.checked ? "Joined" : "Not Joined";
+            waEntry.value = e.target.checked ? "joined" : "not yet joned";
         });
     }
 
