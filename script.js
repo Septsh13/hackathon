@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function updateTeamFields() {
-        const size = parseInt(teamSizeSelect.value) || 1;
+        const val = teamSizeSelect.value;
+        let size = 1;
+        if (val.includes('2')) size = 2;
+        if (val.includes('3')) size = 3;
         
         // Reset all
         Object.values(memberFields).forEach(el => el.classList.add('hidden'));
