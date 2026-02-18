@@ -1,7 +1,7 @@
 let submitted = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Team Size Dynamic Fields
+    const teamSizeSelect = document.getElementById('teamSizeSelect');
     const memberFields = {
         1: document.getElementById('member1row'),
         2: document.getElementById('member2row')
@@ -52,6 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', () => {
             submitted = true;
+            
+            // Fail-safe: If member fields are hidden, fill them with "N/A" 
+            // to satisfy Google Form "Required" validation if user hasn't fixed it on their end.
+            if (memberFields[1].classList.contains('hidden')) memberInputs[1].value = "N/A";
+            if (memberFields[2].classList.contains('hidden')) memberInputs[2].value = "N/A";
+
             const btn = form.querySelector('button');
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Registering...';
             btn.disabled = true;
